@@ -26,7 +26,7 @@ let app = new Vue({
             ['LinkList', '单链表'],
             ['Array', '数组'],
             ['Stack', '栈'],
-            // ['NFTree', 'N叉树'],
+            ['NFTree', 'N叉树'],
             ['Graph', '无向图'],
             ['DirectedGraph', '有向图'],
             ['TwoWayLinkList', '双向链表'],
@@ -103,6 +103,23 @@ let app = new Vue({
             else {
                 curEngine.engine.source(value);
             }
+        },
+        adjust() {
+            curEngine.engine.applyOptions({
+                view: {
+                    position: 'auto',
+                    scale: 'auto'
+                }
+            });
+
+            
+        },
+        resize() {
+            let container = document.getElementById('c' + this.curIndex);
+
+            container.style.width = 400 + 'px';
+            container.style.height = 400 + 'px';
+            curEngine.engine.resize();
         }
     },
     mounted() {

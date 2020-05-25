@@ -35,7 +35,7 @@ function generateNeuralNetworkData(layers) {
 
 const data = {
     BinaryTree: [
-        { id: 1, child: [2, 3], root: true, external: 'treeA', data: 1 }, 
+        { id: 1, child: [2, 3], root: true, external: ['treeA', 'gear'], data: 1 }, 
         { id: 2, data: 2 }, 
         { id: 3, child: [null, 4], data: 3 },
         { id: 4, child: [null, 5], external: 'foo', data: 4 },
@@ -44,8 +44,9 @@ const data = {
         { id: 7, data: 7 }
     ], 
         
-    LinkList: [
-        { id: 1, root: true, next: 2 },
+    LinkList: 
+    [
+        { id: 1, root: true, next: 2, external: ['gg'] },
         { id: 2, next: 3 },
         { id: 3, next: 4 },
         { id: 4, next: 5 },
